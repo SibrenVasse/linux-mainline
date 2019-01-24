@@ -1,0 +1,36 @@
+From b3da03f65f8477a55250ba73f956e57687a6ec91 Mon Sep 17 00:00:00 2001
+From: "Jerry (Fangzhi) Zuo" <Jerry.Zuo@amd.com>
+Date: Thu, 24 Jan 2019 11:51:08 -0500
+Subject: [PATCH] drm/amd/display: Fix MST reboot/poweroff sequence
+
+Need to finish all the sideband msgs before suppressing UP request
+
+Signed-off-by: Jerry (Fangzhi) Zuo <Jerry.Zuo@amd.com>
+---
+ drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+index 5298a1336b38..fb0c4fc45bf8 100644
+--- a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
++++ b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+@@ -786,13 +786,13 @@ static int dm_suspend(void *handle)
+ 	struct amdgpu_display_manager *dm = &adev->dm;
+ 	int ret = 0;
+ 
++	WARN_ON(adev->dm.cached_state);
++	adev->dm.cached_state = drm_atomic_helper_suspend(adev->ddev);
++
+ 	s3_handle_mst(adev->ddev, true);
+ 
+ 	amdgpu_dm_irq_suspend(adev);
+ 
+-	WARN_ON(adev->dm.cached_state);
+-	adev->dm.cached_state = drm_atomic_helper_suspend(adev->ddev);
+-
+ 	dc_set_power_state(dm->dc, DC_ACPI_CM_POWER_STATE_D3);
+ 
+ 	return ret;
+-- 
+2.14.1
+
