@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.0-rc7
-pkgver=5.0rc7
+_tag=v5.0-rc8
+pkgver=5.0rc8
 pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
@@ -23,7 +23,6 @@ source=(
   60-linux.hook  # pacman hook for depmod
   90-linux.hook  # pacman hook for initramfs regeneration
   linux.preset   # standard config files for mkinitcpio ramdisk
-  stream.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -34,8 +33,7 @@ sha256sums=('SKIP'
             '5dc0fff4aaaf2a855224775e13d8d0600e91f5b7d39693013b39cdd0e8f9ddb2'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
-            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-            'f64c33dbaa7e270522a7330e7d1bb70f2429287ebc75bcbadfef35f720e34403')
+            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
