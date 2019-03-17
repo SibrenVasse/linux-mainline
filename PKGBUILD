@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.0
-pkgver=5.0
-pkgrel=2
+_tag=v5.1-rc1
+pkgver=5.1rc1
+pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
