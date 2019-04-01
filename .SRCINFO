@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
-	pkgver = 5.1rc1
-	pkgrel = 1
+	pkgver = 5.1rc3
+	pkgrel = 2
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -13,11 +13,12 @@ pkgbase = linux-mainline
 	makedepends = python-sphinx
 	makedepends = graphviz
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.1-rc1
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.1-rc3
 	source = config
 	source = 60-linux.hook
 	source = 90-linux.hook
 	source = linux.preset
+	source = stream.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
@@ -26,6 +27,7 @@ pkgbase = linux-mainline
 	sha256sums = ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21
 	sha256sums = 834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0
 	sha256sums = ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65
+	sha256sums = 58a6a129c5141855c37e35e0f6859916288e932601943ba9c3247a9ef2835c4c
 
 pkgname = linux-mainline
 	pkgdesc = The Linux-mainline kernel and modules
