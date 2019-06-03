@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
-	pkgver = 5.2rc2
-	pkgrel = 2
+	pkgver = 5.2rc3
+	pkgrel = 1
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -11,7 +11,7 @@ pkgbase = linux-mainline
 	makedepends = libelf
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.2-rc2
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.2-rc3
 	source = config
 	source = 60-linux.hook
 	source = 90-linux.hook
