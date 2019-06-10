@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgver = 5.2rc4
-	pkgrel = 1
+	pkgrel = 2
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -18,6 +18,7 @@ pkgbase = linux-mainline
 	source = linux.preset
 	source = clone_newuser.patch
 	source = link.patch
+	source = 0001-Revert-drm-amd-amdgpu-add-RLC-firmware-to-support-ra.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
@@ -28,6 +29,7 @@ pkgbase = linux-mainline
 	sha256sums = ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65
 	sha256sums = c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431
 	sha256sums = 2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53
+	sha256sums = 2f055ee536708c553a8d1075e52f95c47d67bb0e32c6887e407686b3bd9555d3
 
 pkgname = linux-mainline
 	pkgdesc = The Linux-mainline kernel and modules
