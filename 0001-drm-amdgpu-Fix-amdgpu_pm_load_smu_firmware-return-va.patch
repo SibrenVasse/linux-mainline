@@ -1,0 +1,28 @@
+From 63b09a47c8ff188411257eb94aa7f312bcbec5ed Mon Sep 17 00:00:00 2001
+From: Sibren Vasse <kernel@sibrenvasse.nl>
+Date: Mon, 10 Jun 2019 19:58:50 +0200
+Subject: [PATCH] drm/amdgpu: Fix amdgpu_pm_load_smu_firmware return value
+
+amdgpu_pm_load_smu_firmware must return 0 on no-op instead of -EINVAL
+
+Signed-off-by: Sibren Vasse <kernel@sibrenvasse.nl>
+---
+ drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
+index 039cfa2ec89d..825a50b73250 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
+@@ -2492,7 +2492,7 @@ void amdgpu_pm_print_power_states(struct amdgpu_device *adev)
+ 
+ int amdgpu_pm_load_smu_firmware(struct amdgpu_device *adev, uint32_t *smu_version)
+ {
+-	int r = -EINVAL;
++	int r = 0;
+ 
+ 	if (adev->powerplay.pp_funcs && adev->powerplay.pp_funcs->load_firmware) {
+ 		r = adev->powerplay.pp_funcs->load_firmware(adev->powerplay.pp_handle);
+-- 
+2.22.0
+
