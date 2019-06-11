@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgver = 5.2rc4
-	pkgrel = 3
+	pkgrel = 4
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -18,7 +18,7 @@ pkgbase = linux-mainline
 	source = linux.preset
 	source = clone_newuser.patch
 	source = link.patch
-	source = 0001-drm-amdgpu-Fix-amdgpu_pm_load_smu_firmware-return-va.patch
+	source = load-firmware.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
@@ -29,7 +29,7 @@ pkgbase = linux-mainline
 	sha256sums = ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65
 	sha256sums = c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431
 	sha256sums = 2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53
-	sha256sums = 1d64fe007cb0d87b415c03a109818276cca0bf46b0a4e0949d2679b6cbc711aa
+	sha256sums = a7e663a39536ded91cad34fee4915867e7faadfae5f34631115e9d5b8d1cf814
 
 pkgname = linux-mainline
 	pkgdesc = The Linux-mainline kernel and modules
