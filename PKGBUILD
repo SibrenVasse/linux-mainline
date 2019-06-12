@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.2-rc4
 pkgver=5.2rc4
-pkgrel=4
+pkgrel=5
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -39,7 +39,7 @@ sha256sums=('SKIP'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             'c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431'
             '2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53'
-            'a7e663a39536ded91cad34fee4915867e7faadfae5f34631115e9d5b8d1cf814')
+            'f83f561faf4abb8c043fd5505c3f304db9b6fa6f27d4c815820880771f9f2b82')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}

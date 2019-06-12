@@ -1,25 +1,22 @@
-For SR-IOV VF, powerplay may not be supported, in this case,
-error '-EINVAL' should not be returned.
-
-Signed-off-by: Trigger Huang <Trigger.Huang at amd.com>
----
- drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c | 3 +++
- 1 file changed, 3 insertions(+)
-
 diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
-index 21b5be1..4276d63 100644
+index d8828a37e43a..653b2491fec8 100644
 --- a/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
 +++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c
-@@ -2709,7 +2709,10 @@ int amdgpu_pm_load_smu_firmware(struct amdgpu_device *adev, uint32_t *smu_versio
- 			return r;
+@@ -2700,7 +2700,7 @@ void amdgpu_pm_print_power_states(struct amdgpu_device *adev)
+ 
+ int amdgpu_pm_load_smu_firmware(struct amdgpu_device *adev, uint32_t *smu_version)
+ {
+-	int r = -EINVAL;
++	int r;
+ 
+ 	if (amdgpu_sriov_vf(adev))
+ 		return 0;
+@@ -2713,7 +2713,7 @@ int amdgpu_pm_load_smu_firmware(struct amdgpu_device *adev, uint32_t *smu_versio
  		}
  		*smu_version = adev->pm.fw_version;
-+	} else if (amdgpu_sriov_vf(adev)) {
-+		r = 0;
  	}
-+
- 	return r;
+-	return r;
++	return 0;
  }
  
--- 
-2.7.4
+ int amdgpu_pm_sysfs_init(struct amdgpu_device *adev)
