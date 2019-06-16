@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.2-rc4
-pkgver=5.2rc4
-pkgrel=5
+_tag=v5.2-rc5
+pkgver=5.2rc5
+pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -23,9 +23,12 @@ source=(
   60-linux.hook  # pacman hook for depmod
   90-linux.hook  # pacman hook for initramfs regeneration
   linux.preset   # standard config files for mkinitcpio ramdisk
+  # Archlinux patches
   clone_newuser.patch
+  unpriv.patch
+
+  # https://bugzilla.kernel.org/show_bug.cgi?id=203769
   link.patch
-  load-firmware.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,8 +41,8 @@ sha256sums=('SKIP'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             'c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431'
-            '2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53'
-            'f83f561faf4abb8c043fd5505c3f304db9b6fa6f27d4c815820880771f9f2b82')
+            'e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de'
+            '2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
