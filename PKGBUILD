@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.2-rc5
 pkgver=5.2rc5
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -29,6 +29,9 @@ source=(
 
   # https://bugzilla.kernel.org/show_bug.cgi?id=203769
   link.patch
+
+  # https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-001.md
+  net-cve.patch  
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -42,7 +45,8 @@ sha256sums=('SKIP'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             'c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431'
             'e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de'
-            '2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53')
+            '2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53'
+            '09e54ddce9529bb27eced7c9386cfc54fb81b16f8a434bdbb19ad17102fa492e')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
