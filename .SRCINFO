@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
-	pkgver = 5.2rc5
-	pkgrel = 2
+	pkgver = 5.2rc6
+	pkgrel = 1
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -11,7 +11,7 @@ pkgbase = linux-mainline
 	makedepends = libelf
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.2-rc5
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.2-rc6
 	source = config
 	source = 60-linux.hook
 	source = 90-linux.hook
@@ -19,7 +19,6 @@ pkgbase = linux-mainline
 	source = clone_newuser.patch
 	source = unpriv.patch
 	source = link.patch
-	source = net-cve.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
@@ -31,7 +30,6 @@ pkgbase = linux-mainline
 	sha256sums = c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431
 	sha256sums = e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de
 	sha256sums = 2cb8e3130e286892639e42ef0cf27aa9e626b15323f1c532dc04211c6dd42b53
-	sha256sums = 09e54ddce9529bb27eced7c9386cfc54fb81b16f8a434bdbb19ad17102fa492e
 
 pkgname = linux-mainline
 	pkgdesc = The Linux-mainline kernel and modules
