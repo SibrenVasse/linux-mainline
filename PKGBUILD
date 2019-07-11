@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.2
 pkgver=5.2
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -37,7 +37,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '013defd92c7530724105f323a22ae484cfc4a9053bbdc8eb2260134d873d7d86'
+            '5dc432031db0b2b6640f0d4eab6c824594106dde9f44d1e5b979978109d13f0d'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
