@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.2
 pkgver=5.2
-pkgrel=3
+pkgrel=4
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -30,6 +30,9 @@ source=(
   intel.patch
   clone_newuser.patch
   unpriv.patch
+
+  # stable 5.2.1
+  stable.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -43,7 +46,8 @@ sha256sums=('SKIP'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             'f3f2a185db3c59ea467eaa5e82ecc3947cdef6c17563a5504418e0c76b6dc73e'
             'c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431'
-            'e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de')
+            'e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de'
+            'bb0638cdfc937dd8c4344d38f536fd5bad79529afa80ae02851633b5d90344e5')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}

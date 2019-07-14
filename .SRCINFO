@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgver = 5.2
-	pkgrel = 3
+	pkgrel = 4
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -23,6 +23,7 @@ pkgbase = linux-mainline
 	source = intel.patch
 	source = clone_newuser.patch
 	source = unpriv.patch
+	source = stable.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
@@ -34,6 +35,7 @@ pkgbase = linux-mainline
 	sha256sums = f3f2a185db3c59ea467eaa5e82ecc3947cdef6c17563a5504418e0c76b6dc73e
 	sha256sums = c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431
 	sha256sums = e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de
+	sha256sums = bb0638cdfc937dd8c4344d38f536fd5bad79529afa80ae02851633b5d90344e5
 
 pkgname = linux-mainline
 	pkgdesc = The Linux-mainline kernel and modules
