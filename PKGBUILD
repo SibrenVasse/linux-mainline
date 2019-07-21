@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.2
-pkgver=5.2
-pkgrel=5
+_tag=v5.3-rc1
+pkgver=5.3rc1
+pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -30,9 +30,10 @@ source=(
   intel.patch::https://git.archlinux.org/linux.git/patch/?id=36232e06dc6332c45a77bd26e36015dbaa094d15
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=3709f2a5ba6d5b36f63fcb1d348701b4c155463f
   unpriv.patch::https://git.archlinux.org/linux.git/patch/?id=0bced488c460e3e9c9b0cdbca884f1704f6877f7
+  netfilter.patch::https://git.archlinux.org/linux.git/patch/?id=164647d76a17d87a33440e6149b616eeed34970f
 
   # stable 5.2.2
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
+  #"stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -40,14 +41,14 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '5dc432031db0b2b6640f0d4eab6c824594106dde9f44d1e5b979978109d13f0d'
+            'c405c700b2cb06c4ec805b7e327d0b66416395995519281194a8293da69b398a'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             '83e321e6e3bae751e711c3f5a753ef91d671f017f58ca1b5d17dfdf203489175'
             '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
             '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67'
-            '729084da258dd41195aae7f6c897b92f2e9355c0f9d28beec1fb8e67984afdf0')
+            'ebbc5d6d0f6c9de2536d46ea358d52014b847d3a2ab317c97dcba97fc2fba908')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
@@ -69,7 +70,7 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  patch -Np1 < "../stable.patch"
+  #patch -Np1 < "../stable.patch"
 
   msg2 "Setting config..."
   cp ../config .config
