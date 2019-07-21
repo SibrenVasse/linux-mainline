@@ -27,9 +27,9 @@ source=(
   90-linux.hook  # pacman hook for initramfs regeneration
   linux.preset   # standard config files for mkinitcpio ramdisk
   # Archlinux patches
-  intel.patch
-  clone_newuser.patch
-  unpriv.patch
+  intel.patch::https://git.archlinux.org/linux.git/patch/?id=36232e06dc6332c45a77bd26e36015dbaa094d15
+  clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=3709f2a5ba6d5b36f63fcb1d348701b4c155463f
+  unpriv.patch::https://git.archlinux.org/linux.git/patch/?id=0bced488c460e3e9c9b0cdbca884f1704f6877f7
 
   # stable 5.2.2
   "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
@@ -44,9 +44,9 @@ sha256sums=('SKIP'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-            'f3f2a185db3c59ea467eaa5e82ecc3947cdef6c17563a5504418e0c76b6dc73e'
-            'c2525dd09ade43e7521b1eda013564bde079e62e2a2cdfdbd3759427248ee431'
-            'e4c43a01c1421153665f6a89041df097929dd1cbc6b667d5b335d37f5b3b91de'
+            '83e321e6e3bae751e711c3f5a753ef91d671f017f58ca1b5d17dfdf203489175'
+            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
+            '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67'
             '729084da258dd41195aae7f6c897b92f2e9355c0f9d28beec1fb8e67984afdf0')
 
 _kernelname=${pkgbase#linux}
