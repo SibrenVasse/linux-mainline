@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.3-rc3
-pkgver=5.3rc3
-pkgrel=2
+_tag=v5.3-rc4
+pkgver=5.3rc4
+pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -27,12 +27,8 @@ source=(
   90-linux.hook  # pacman hook for initramfs regeneration
   linux.preset   # standard config files for mkinitcpio ramdisk
   # Archlinux patches
-  iwlwifi.patch::https://git.archlinux.org/linux.git/patch/?id=36232e06dc6332c45a77bd26e36015dbaa094d15
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=3709f2a5ba6d5b36f63fcb1d348701b4c155463f
   unpriv.patch::https://git.archlinux.org/linux.git/patch/?id=0bced488c460e3e9c9b0cdbca884f1704f6877f7
-
-  # https://patchwork.kernel.org/patch/11082521/
-  bfq_null.patch::https://patchwork.kernel.org/patch/11082521/raw/
 
   # stable 5.2.2
   #"stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
@@ -43,14 +39,12 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '33ad5cc089176611947235a21d371e773e76d396fb1bd5fe227552bce723f6ed'
+            '640b40fbc97b5457e068a10337cb1c00688356b64b76c0dbf795352272d28d23'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-            '60ff2993f4555d10ce1c3f9bc89c34c43a293280637cc32f770695d0b929d5d2'
             '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
-            '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67'
-            '1b34d34ce11542d4a370620fab65fd241dc11a0fd8c2eb8a07a764d7f4fa2f6f')
+            '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
