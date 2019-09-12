@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.3-rc8
 pkgver=5.3rc8
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -31,6 +31,13 @@ source=(
   unpriv.patch::https://git.archlinux.org/linux.git/patch/?id=0bced488c460e3e9c9b0cdbca884f1704f6877f7
   btrfs.patch::https://git.archlinux.org/linux.git/patch/?id=45fc8773f47b7cbe56caab0e14abf26d1e044e63
 
+  # Personal selection
+  amd_bulk_moves.patch
+  amd_mclk_switching.patch
+  amd_futex1.patch::https://lore.kernel.org/lkml/20190730220602.28781-1-krisman@collabora.com/raw
+  amd_futex2.patch::https://lore.kernel.org/lkml/20190730220602.28781-2-krisman@collabora.com/raw
+  amd_lfc.patch
+
   # stable 5.2.2
   #"stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
 )
@@ -46,7 +53,12 @@ sha256sums=('SKIP'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
             '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67'
-            'fc26a05d0725bf120cd3b893a9ae04ac31b9ae8c4954a3fe7f1310dd1b69de94')
+            'fc26a05d0725bf120cd3b893a9ae04ac31b9ae8c4954a3fe7f1310dd1b69de94'
+            '51ea50fcf7a48741c8afd15dd5cf134df1b359144a4ad0c95bd59881a40624ea'
+            '77bf0edae15265ebba916470f4c0b8d802c8fb035d049ab0ea92394f76d8ad19'
+            '9bcde03fa725bdec6234a585d8c71e7e9db5482c8f066f1681e4f0b8faec472e'
+            '48ea95b1fccd34a1d2a985add62f2ead0e3a4e75aba7117928d5fdc9b47bdd45'
+            'e1cb4e85e56eac691fb3cdd1cce2a8560ee6b38d0031cc75cafa2967d463d93d')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
