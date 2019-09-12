@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.3-rc8
 pkgver=5.3rc8
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -29,6 +29,7 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=3709f2a5ba6d5b36f63fcb1d348701b4c155463f
   unpriv.patch::https://git.archlinux.org/linux.git/patch/?id=0bced488c460e3e9c9b0cdbca884f1704f6877f7
+  btrfs.patch::https://git.archlinux.org/linux.git/patch/?id=45fc8773f47b7cbe56caab0e14abf26d1e044e63
 
   # stable 5.2.2
   #"stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.2.2.xz"
@@ -44,7 +45,8 @@ sha256sums=('SKIP'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
             '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
-            '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67')
+            '0e50ed31f48cc7c169d4a13eba4668d4fb3efe034ab18fdc3227a1e9b7fc3a67'
+            'fc26a05d0725bf120cd3b893a9ae04ac31b9ae8c4954a3fe7f1310dd1b69de94')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
