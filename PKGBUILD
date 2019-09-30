@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.3
-pkgver=5.3.1
-pkgrel=1
+_tag=v5.4-rc1
+pkgver=5.4rc1
+pkgrel=2
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -21,7 +21,7 @@ makedepends=(
 options=('!strip')
 _srcname=linux-mainline
 source=(
-  "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
+  "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#commit=$_tag"
   config         # the main kernel config file
   60-linux.hook  # pacman hook for depmod
   90-linux.hook  # pacman hook for initramfs regeneration
@@ -29,15 +29,8 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=bd72838cba44f93e3166e76f69c50136a65df228
 
-  # Personal selection
-  amd_bulk_moves.patch
-  amd_mclk_switching.patch
-  amd_futex1.patch::https://lore.kernel.org/lkml/20190730220602.28781-1-krisman@collabora.com/raw
-  amd_futex2.patch::https://lore.kernel.org/lkml/20190730220602.28781-2-krisman@collabora.com/raw
-  amd_lfc.patch
-
   # stable 5.3.1
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.3.1.xz"
+  # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.3.1.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -45,17 +38,11 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'c587061100f3d6a63252ad7a43408eff18032018f45bc67c3bb2888774e98c85'
+            '581bc9d87e287dc0bba3f1361ee86d08579da784829d6950cc68091e3d2b0736'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
-            '51ea50fcf7a48741c8afd15dd5cf134df1b359144a4ad0c95bd59881a40624ea'
-            '77bf0edae15265ebba916470f4c0b8d802c8fb035d049ab0ea92394f76d8ad19'
-            '9bcde03fa725bdec6234a585d8c71e7e9db5482c8f066f1681e4f0b8faec472e'
-            '48ea95b1fccd34a1d2a985add62f2ead0e3a4e75aba7117928d5fdc9b47bdd45'
-            'e1cb4e85e56eac691fb3cdd1cce2a8560ee6b38d0031cc75cafa2967d463d93d'
-            '84cf9ac904a4af41c23b1830ea98872e43f014fe7daba3e295e45e7381024d34')
+            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
@@ -77,7 +64,7 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  patch -Np1 < "../stable.patch"
+  #patch -Np1 < "../stable.patch"
 
   msg2 "Setting config..."
   cp ../config .config
