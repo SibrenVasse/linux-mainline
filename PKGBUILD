@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.4-rc4
 pkgver=5.4rc4
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
@@ -46,6 +46,10 @@ sha256sums=('SKIP'
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARCH}
+
+export KBUILD_BUILD_HOST=archlinux
+export KBUILD_BUILD_USER=$pkgbase
+export KBUILD_BUILD_TIMESTAMP="@${SOURCE_DATE_EPOCH:-$(date +%s)}"
 
 prepare() {
   cd $_srcname
