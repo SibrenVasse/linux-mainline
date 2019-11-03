@@ -7,9 +7,9 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
-_tag=v5.4-rc5
-pkgver=5.4rc5
-pkgrel=2
+_tag=v5.4-rc6
+pkgver=5.4rc6
+pkgrel=1
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
 license=(GPL2)
