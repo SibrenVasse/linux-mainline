@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgver = 5.4rc6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -26,7 +26,7 @@ pkgbase = linux-mainline
 	sha256sums = 679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af
 
 pkgname = linux-mainline
-	pkgdesc = The Linux-mainline kernel and modules
+	pkgdesc = The kernel and modules
 	depends = coreutils
 	depends = kmod
 	depends = initramfs
@@ -34,8 +34,8 @@ pkgname = linux-mainline
 	optdepends = linux-firmware: firmware images needed for some devices
 
 pkgname = linux-mainline-headers
-	pkgdesc = Header files and scripts for building modules for Linux-mainline kernel
+	pkgdesc = Headers and scripts for building modules for the kernel
 
 pkgname = linux-mainline-docs
-	pkgdesc = Kernel hackers manual - HTML documentation that comes with the Linux-mainline kernel
+	pkgdesc = Kernel hacker's manual for the kernel
 
