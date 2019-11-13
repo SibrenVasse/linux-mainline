@@ -7,7 +7,7 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 _tag=v5.4-rc7
 pkgver=5.4rc7
-pkgrel=1
+pkgrel=2
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
 license=(GPL2)
@@ -24,6 +24,9 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=bd72838cba44f93e3166e76f69c50136a65df228
 
+  # Zombieload
+  zombie.patch::https://github.com/torvalds/linux/commit/eb094f06963bb0fd8134c6a9b805d4ad0002a7d4.patch
+
   # stable 5.3.1
   # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.3.1.xz"
 )
@@ -34,7 +37,8 @@ validpgpkeys=(
 )
 sha256sums=('SKIP'
             '8b0a650dc2405d899880c08cfef922d39dee456b04df3040bc92da62bbcdf99f'
-            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af')
+            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af'
+            '154cc10dd314120318552b901ec13537bc1c6e1c6019d542236bb2bbfe67a071')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
