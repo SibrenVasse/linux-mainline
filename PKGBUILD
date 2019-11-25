@@ -5,8 +5,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
-_tag=v5.4-rc8
-pkgver=5.4rc8
+_tag=v5.4
+pkgver=5.4
 pkgrel=1
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
@@ -33,8 +33,8 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '78409e322595f1d7c8658fdbbcea942ccdee304c8505a7da3aa9eb15bf5c663b'
-            '679d4aee50197457716e14bdbded58328c070d514ec6f029cb64002d80df48af')
+            '95d111fa3c3f4d1d0adc927f920be8b3250b77781540e8e180af551113c8fb3d'
+            '7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
