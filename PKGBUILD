@@ -11,11 +11,7 @@ pkgrel=2
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
 license=(GPL2)
-makedepends=(
-  xmlto kmod inetutils bc libelf
-  python-sphinx python-sphinx_rtd_theme graphviz imagemagick
-  git
-)
+makedepends=(bc kmod libelf git)
 options=('!strip')
 _srcname=linux-mainline
 source=(
@@ -69,7 +65,7 @@ prepare() {
 
 build() {
   cd $_srcname
-  make bzImage modules htmldocs
+  make bzImage modules
 }
 
 _package() {
@@ -178,37 +174,7 @@ _package-headers() {
   chmod -Rc u=rwX,go=rX "$pkgdir"
 }
 
-_package-docs() {
-  pkgdesc="Kernel hacker's manual for the $pkgdesc kernel"
-
-  cd $_srcname
-  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
-
-  msg2 "Installing documentation..."
-  mkdir -p "$builddir"
-  cp -t "$builddir" -a Documentation
-
-  msg2 "Removing unneeded files..."
-  rm -rv "$builddir"/Documentation/{,output/}.[^.]*
-
-  msg2 "Moving HTML docs..."
-  local src dst
-  while read -rd '' src; do
-    dst="$builddir/Documentation/${src#$builddir/Documentation/output/}"
-    mkdir -p "${dst%/*}"
-    mv "$src" "$dst"
-    rmdir -p --ignore-fail-on-non-empty "${src%/*}"
-  done < <(find "$builddir/Documentation/output" -type f -print0)
-
-  msg2 "Adding symlink..."
-  mkdir -p "$pkgdir/usr/share/doc"
-  ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
-
-  msg2 "Fixing permissions..."
-  chmod -Rc u=rwX,go=rX "$pkgdir"
-}
-
-pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
+pkgname=("$pkgbase" "$pkgbase-headers")
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
     $(declare -f "_package${_p#$pkgbase}")
