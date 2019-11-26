@@ -7,7 +7,7 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 _tag=v5.4
 pkgver=5.4
-pkgrel=1
+pkgrel=2
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
 license=(GPL2)
@@ -33,7 +33,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '95d111fa3c3f4d1d0adc927f920be8b3250b77781540e8e180af551113c8fb3d'
+            'a4adfff0764b52a790c5fe31ab94b52b14d7a0edf5c95c4e73e5404a6a5cb927'
             '7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c')
 
 export KBUILD_BUILD_HOST=archlinux

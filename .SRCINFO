@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgver = 5.4
-	pkgrel = 1
+	pkgrel = 2
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
@@ -22,7 +22,7 @@ pkgbase = linux-mainline
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = 95d111fa3c3f4d1d0adc927f920be8b3250b77781540e8e180af551113c8fb3d
+	sha256sums = a4adfff0764b52a790c5fe31ab94b52b14d7a0edf5c95c4e73e5404a6a5cb927
 	sha256sums = 7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c
 
 pkgname = linux-mainline
