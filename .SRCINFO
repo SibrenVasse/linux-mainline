@@ -4,9 +4,15 @@ pkgbase = linux-mainline
 	url = https://git.archlinux.org/linux.git/log/?h=v
 	arch = x86_64
 	license = GPL2
-	makedepends = bc
+	makedepends = xmlto
 	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
 	makedepends = libelf
+	makedepends = python-sphinx
+	makedepends = python-sphinx_rtd_theme
+	makedepends = graphviz
+	makedepends = imagemagick
 	makedepends = git
 	options = !strip
 	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#commit=v5.4
@@ -29,4 +35,7 @@ pkgname = linux-mainline
 
 pkgname = linux-mainline-headers
 	pkgdesc = Headers and scripts for building modules for the kernel
+
+pkgname = linux-mainline-docs
+	pkgdesc = Kernel hacker's manual for the kernel
 
