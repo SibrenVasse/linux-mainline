@@ -5,8 +5,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
-_tag=v5.4
-pkgver=5.4.2
+_tag=v5.5-rc1
+pkgver=5.5rc1
 pkgrel=1
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 arch=(x86_64)
@@ -24,13 +24,8 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=bd72838cba44f93e3166e76f69c50136a65df228
 
-  pci_deadlock.patch::https://git.archlinux.org/linux.git/patch/?id=c5d7bb41ce34e4d00c31a8d2a4728a2fdef1216c
-  pci_interrupt.patch::https://git.archlinux.org/linux.git/patch/?id=ff550502cfb2bcd4a423be1f43670c7713d16478
-  mfd.patch::https://git.archlinux.org/linux.git/patch/?id=5408dcb0a652b76a5e190a68ce737a9a903cdfc0
-  devres.patch::https://git.archlinux.org/linux.git/patch/?id=72bc3d71be44797eeb76ad17f124877f19526313
-
   # stable
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.4.2.xz"
+  # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.4.2.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,13 +33,8 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '6490981fd19b95f5d87f1db5b6a7bc1c5ac9b53e468164b843c2ddc6b2f07c15'
-            '7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c'
-            '657fd313fb16cb6a6ce6cff4bc6ad96069b500514e6998442aed95573ab4083a'
-            '5c783631f63bb87f8f8a7b98d4fc5eb2a650a4c101e877f0b58815f2538ec481'
-            'd7257a252b7912cd9a5e96fb9eedadd6fa0744f5ea2ac52c135de7c28dac9c98'
-            '6fd45ccc07747f177b83550d397c16f8c32fa49985eab790be9792bcb0adf8fd'
-            '90f5cb7b43bd7510de633dc9cd6cc14d4380d60d0c72eaf09b289412c01380f0')
+            'be0aa5ee1603d063bb652876c0f4eb73ac4deeddc6344f1190b1dcb08df0aeec'
+            '7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -67,8 +57,8 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  msg2 "Applying stable patch"
-  patch -Np1 < "../stable.patch"
+  # msg2 "Applying stable patch"
+  # patch -Np1 < "../stable.patch"
 
   msg2 "Setting config..."
   cp ../config .config
