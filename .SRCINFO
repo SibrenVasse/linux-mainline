@@ -1,21 +1,21 @@
 pkgbase = linux-mainline
+	pkgdesc = Linux Mainline
 	pkgver = 5.5rc1
-	pkgrel = 1
-	url = https://git.archlinux.org/linux.git/log/?h=v
+	pkgrel = 2
+	url = https://kernel.org/
 	arch = x86_64
 	license = GPL2
-	makedepends = xmlto
-	makedepends = kmod
-	makedepends = inetutils
 	makedepends = bc
+	makedepends = kmod
 	makedepends = libelf
+	makedepends = xmlto
 	makedepends = python-sphinx
 	makedepends = python-sphinx_rtd_theme
 	makedepends = graphviz
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#commit=v5.5-rc1
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.5-rc1
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=bd72838cba44f93e3166e76f69c50136a65df228
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
@@ -26,7 +26,7 @@ pkgbase = linux-mainline
 	sha256sums = 7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c
 
 pkgname = linux-mainline
-	pkgdesc = The kernel and modules
+	pkgdesc = The Linux Mainline kernel and modules
 	depends = coreutils
 	depends = kmod
 	depends = initramfs
@@ -34,8 +34,8 @@ pkgname = linux-mainline
 	optdepends = linux-firmware: firmware images needed for some devices
 
 pkgname = linux-mainline-headers
-	pkgdesc = Headers and scripts for building modules for the kernel
+	pkgdesc = Headers and scripts for building modules for the Linux Mainline kernel
 
 pkgname = linux-mainline-docs
-	pkgdesc = Kernel hacker's manual for the kernel
+	pkgdesc = Documentation for the Linux Mainline kernel
 
