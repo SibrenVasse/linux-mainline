@@ -1,7 +1,7 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.5rc7
-	pkgrel = 2
+	pkgver = 5.5
+	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
 	license = GPL2
@@ -15,14 +15,14 @@ pkgbase = linux-mainline
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.5-rc7
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.5
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=bd72838cba44f93e3166e76f69c50136a65df228
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = 6eacd1ad13f8fede39ae79e7776ff42e52c99e2023eb80ef29aa6ef612fd6b6b
+	sha256sums = f81075bfa4510b755065d6f9e769797fdedcd11f0faba6857bfe4346c602894e
 	sha256sums = 7685d526bbdbfa795986591a70071c960ff572f56d3501774861728a9df8664c
 
 pkgname = linux-mainline
