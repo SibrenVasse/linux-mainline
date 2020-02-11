@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.6-rc1
 pkgver=5.6rc1
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -22,6 +22,7 @@ makedepends=(
 )
 options=('!strip')
 _srcname=linux-mainline
+provides=('WIREGUARD-MODULE')
 source=(
   "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
   config         # the main kernel config file
@@ -37,7 +38,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'f555087fa6bd1f51ff3e563a0cb4fc7e1a7b437256e6c0755f19bf39666ae79a'
+            '4eddcd8866f8ea3eb5f1a405efe33a853ac5d30d7669b626ccd792ed9cafa202'
             'e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991')
 
 export KBUILD_BUILD_HOST=archlinux
