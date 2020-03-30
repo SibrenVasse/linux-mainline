@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.6rc7
+	pkgver = 5.6
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -16,14 +16,14 @@ pkgbase = linux-mainline
 	makedepends = git
 	provides = WIREGUARD-MODULE
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.6-rc7
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.6
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=39c1f39f0cd3a533c537a2a6fb0b9dfaa82323bd
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = fc2854099fe3bd1e9ee1f54f78d396fb666d8e223bd0c172873edf068d6542e1
+	sha256sums = cfa1921ce1f12d8bc8ed276bf9fe66dbeaf277ee8229d86da21bcfa0fabac07c
 	sha256sums = e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991
 
 pkgname = linux-mainline
