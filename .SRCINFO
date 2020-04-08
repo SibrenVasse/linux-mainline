@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.6.2
+	pkgver = 5.6.3
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -17,15 +17,17 @@ pkgbase = linux-mainline
 	options = !strip
 	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.6
 	source = config
-	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=39c1f39f0cd3a533c537a2a6fb0b9dfaa82323bd
-	source = stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.6.2.xz
+	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e1293fa8ca1b8ef89c8c3eddf4fecd6c25119aeb
+	source = sphinx-workaround.patch
+	source = stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.6.3.xz
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = acfca2c06257c1d3896390b1f261d3b4e4f7d69734686b48542b2623963c5331
+	sha256sums = 8c8e641b99068e4586330b00326ab39f63139253629fe3e41a2911cce53b4c76
 	sha256sums = e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991
-	sha256sums = f16c1edbc79caa6098ca9964b27330cff970f016adc32c7baf95f4c2e7a1665d
+	sha256sums = 8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c
+	sha256sums = a677aa98df0fc907314130b511feef3108717d98c405c98a51dde4e06d1c492c
 
 pkgname = linux-mainline
 	pkgdesc = The Linux Mainline kernel and modules
