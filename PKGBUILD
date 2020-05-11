@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.7-rc4
-pkgver=5.7rc4
+_tag=v5.7-rc5
+pkgver=5.7rc5
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -29,6 +29,8 @@ source=(
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e1293fa8ca1b8ef89c8c3eddf4fecd6c25119aeb
   sphinx-workaround.patch
 
+  gcc10.patch::https://git.archlinux.org/linux.git/patch/?id=0cf3349234df93705eb0b24070e91c8132de42b7
+
   # stable
   # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.6.3.xz"
 )
@@ -38,9 +40,10 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'f98a13103c57c0e077bb12fccc87b83c9059bb8a9fb35b4ceb91352376252a09'
+            '45a2e958b31b73104a60c475fd6a445b507868ee6521100bc8f442f9ab02e992'
             'e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991'
-            '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c')
+            '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c'
+            '97b82d4de39a6477b56991d4e25f2e9fa91c7c2155fabdcd1e7ecc49bc2f5e8a')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
