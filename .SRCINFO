@@ -1,7 +1,7 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
 	pkgver = 5.7
-	pkgrel = 1
+	pkgrel = 2
 	url = https://kernel.org/
 	arch = x86_64
 	license = GPL2
@@ -23,7 +23,7 @@ pkgbase = linux-mainline
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = 4030c3a316d7d051f40c400f256059183cb53924b1bc1e9e035cf7e43a1bb827
+	sha256sums = 5aebe58f8ab3b0e8262f03b8cf2c8f7b3e6b5938bc94494aca3d3d60a8fa32a0
 	sha256sums = e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991
 	sha256sums = 8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c
 
