@@ -9,7 +9,7 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.7
-pkgver=5.7.1
+pkgver=5.7.2
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -30,7 +30,7 @@ source=(
   sphinx-workaround.patch
 
   # stable
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.7.1.xz"
+  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.7.2.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,10 +38,10 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '623601ed9d7879dd9dba1cd50fc8051f9db508b49b4fc0c47c5a9eb9165fc04e'
+            '44d1069bae639dd331d7ba701ffc1de5c920ad06c69ea0c1e89f0b603f018c53'
             'e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991'
             '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c'
-            'febbb12fde35d754628930805f696d692d5e17fcea34469b96a81072b9dd7179')
+            '6d1f86937ae202b25e4a9c3b9cd87c7da520af7000b4f271ac379282afa9b8d5')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
