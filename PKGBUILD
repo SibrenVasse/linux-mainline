@@ -8,9 +8,9 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.7
-pkgver=5.7.2
-pkgrel=1
+_tag=v5.8-rc1
+pkgver=5.8rc1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -26,11 +26,13 @@ source=(
   "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
   config         # the main kernel config file
   # Archlinux patches
-  clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e1293fa8ca1b8ef89c8c3eddf4fecd6c25119aeb
+  # clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=0f579ba70a8b9abbfe32a523dacf9d514efb1148
   sphinx-workaround.patch
 
+  ext4.patch::https://git.kernel.org/pub/scm/linux/kernel/git/tytso/ext4.git/patch/?id=811985365378df01386c3cfb7ff716e74ca376d5
+
   # stable
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.7.2.xz"
+  # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.7.2.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,10 +40,9 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '44d1069bae639dd331d7ba701ffc1de5c920ad06c69ea0c1e89f0b603f018c53'
-            'e90ee2ac338133c8687a8a6ca6a80591013a36e5ba16e585bb7f3f9376b92991'
+            '06d81598e5891fec2b85a76d0c2a54e66caa3d331248d27419b86eeb91398548'
             '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c'
-            '6d1f86937ae202b25e4a9c3b9cd87c7da520af7000b4f271ac379282afa9b8d5')
+            '8c2ed21d85e78f22b9ae56335b0b3ca1bcd3a0b1e07b61220495ab95bcff304c')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -64,8 +65,8 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  echo "Applying stable patch"
-  patch -Np1 < "../stable.patch"
+  #echo "Applying stable patch"
+  #patch -Np1 < "../stable.patch"
 
   echo "Setting config..."
   cp ../config .config
