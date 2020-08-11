@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.8-rc7
-pkgver=5.8rc7
+_tag=v5.8
+pkgver=5.8
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -26,7 +26,6 @@ source=(
   "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
   config         # the main kernel config file
   # Archlinux patches
-  # clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=0f579ba70a8b9abbfe32a523dacf9d514efb1148
   sphinx-workaround.patch
 
   # stable
@@ -38,7 +37,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '25cef236b34dd6d08f48b53de127d7f89dd830e14685f3a0711ba44872b25990'
+            'a7527b9f46dbe3ffe9a5719faf859ff68d691f1ff71055b9c77b14fdbf8185fb'
             '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c')
 
 export KBUILD_BUILD_HOST=archlinux
