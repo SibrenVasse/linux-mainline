@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.9.0-rc8 Kernel Configuration
+# Linux/x86 5.9.0 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 10.2.0"
 CONFIG_CC_IS_GCC=y
@@ -8484,7 +8484,7 @@ CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES=y
 CONFIG_VDPA=m
 CONFIG_VDPA_SIM=m
 CONFIG_IFCVF=m
-# CONFIG_MLX5_VDPA is not set
+# CONFIG_MLX5_VDPA_NET is not set
 CONFIG_VHOST_IOTLB=m
 CONFIG_VHOST_RING=m
 CONFIG_VHOST=m

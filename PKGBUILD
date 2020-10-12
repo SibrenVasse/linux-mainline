@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.9-rc8
-pkgver=5.9rc8
+_tag=v5.9
+pkgver=5.9
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -37,7 +37,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '4512292c7aabdc64a84472ccc94c7bbac0d68712dc2c834800fffa1afcd1d0ab'
+            'a96d7ca8e96a520784bd27fecfbd32c86495fe8e2c9714e7f18d8456a6d34bd0'
             '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c')
 
 export KBUILD_BUILD_HOST=archlinux
