@@ -9,8 +9,8 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.9
-pkgver=5.9
-pkgrel=2
+pkgver=5.9.1
+pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -29,7 +29,7 @@ source=(
   sphinx-workaround.patch
 
   # stable
-  # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.8.1.xz"
+  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.9.1.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -37,8 +37,9 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '85f48cfc08448ae3c9ce56a273136b1b73bde7f884a70e4cc58c21221ae1b349'
-            '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c')
+            'f82331c9d19427fa591652c0856c14d23810ff340681c6fa0e0f4f582250fd9b'
+            '8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c'
+            '7edb7b9d06b02f9b88d868c74ab618baf899c94edb19a73291f640dbea55c312')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -61,8 +62,8 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  # echo "Applying stable patch"
-  # patch -Np1 < "../stable.patch"
+  echo "Applying stable patch"
+  patch -Np1 < "../stable.patch"
 
   echo "Setting config..."
   cp ../config .config
