@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.9.1
+	pkgver = 5.10rc1
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -16,17 +16,13 @@ pkgbase = linux-mainline
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.9
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.10-rc1
 	source = config
-	source = sphinx-workaround.patch
-	source = stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.9.1.xz
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = f82331c9d19427fa591652c0856c14d23810ff340681c6fa0e0f4f582250fd9b
-	sha256sums = 8cb21e0b3411327b627a9dd15b8eb773295a0d2782b1a41b2a8839d1b2f5778c
-	sha256sums = 7edb7b9d06b02f9b88d868c74ab618baf899c94edb19a73291f640dbea55c312
+	sha256sums = 07887f23292d7afe9bb2eb7a4140e236aa265a18ace696d02beb4a69b9b6ebc0
 
 pkgname = linux-mainline
 	pkgdesc = The Linux Mainline kernel and modules
