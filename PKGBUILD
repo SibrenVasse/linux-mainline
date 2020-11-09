@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.10-rc2
-pkgver=5.10rc2
+_tag=v5.10-rc3
+pkgver=5.10rc3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -37,7 +37,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'e32d4977981414bde2db46e9779e76a3407160ca97d6ed0c9915eb4d7ecc9449')
+            'fc477c43971d3bdb361e132140fe0fe59c5f07308fbb304405e001618179b808')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
