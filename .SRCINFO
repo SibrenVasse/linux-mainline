@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.10rc3
+	pkgver = 5.10rc4
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -16,13 +16,13 @@ pkgbase = linux-mainline
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.10-rc3
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.10-rc4
 	source = config
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = fc477c43971d3bdb361e132140fe0fe59c5f07308fbb304405e001618179b808
+	sha256sums = cfe06f8588fce9a9848aaf9e8a964a2868a18e9c5866a787da5fbf6e6a3993af
 
 pkgname = linux-mainline
 	pkgdesc = The Linux Mainline kernel and modules
