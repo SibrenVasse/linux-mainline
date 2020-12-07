@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.10-rc6
-pkgver=5.10rc6
+_tag=v5.10-rc7
+pkgver=5.10rc7
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -30,6 +30,7 @@ source=(
 
   # stable
   #"stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.9.1.xz"
+  fix.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -37,7 +38,8 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'de2a0ab664d327c6557be9a8e68075e758f110765225e6409bc5f9ca345702f2')
+            '2601ea75c08e99eb0d33f95a351144f738af8a078865b2f2cc168ee8c342a520'
+            '59883984dfa5280d0caf2243af6a4d41964d85c46aa82a2ebe02b5383e65aad8')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase

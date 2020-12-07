@@ -1,0 +1,27 @@
+From 078811aa5e9d877a6eb012452953223fbd367796 Mon Sep 17 00:00:00 2001
+From: Sibren Vasse <arch@sibrenvasse.nl>
+Date: Mon, 7 Dec 2020 13:23:44 +0000
+Subject: [PATCH] Revert "mm/filemap: add static for function
+ __add_to_page_cache_locked"
+
+This reverts commit 3351b16af4946fff0d46481d155fb91adb28b1f9.
+---
+ mm/filemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mm/filemap.c b/mm/filemap.c
+index 331f4261d723..0b2067b3c328 100644
+--- a/mm/filemap.c
++++ b/mm/filemap.c
+@@ -827,7 +827,7 @@ int replace_page_cache_page(struct page *old, struct page *new, gfp_t gfp_mask)
+ }
+ EXPORT_SYMBOL_GPL(replace_page_cache_page);
+ 
+-static noinline int __add_to_page_cache_locked(struct page *page,
++noinline int __add_to_page_cache_locked(struct page *page,
+ 					struct address_space *mapping,
+ 					pgoff_t offset, gfp_t gfp,
+ 					void **shadowp)
+-- 
+2.29.2
+
