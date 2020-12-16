@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.10
+	pkgver = 5.10.1
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -22,11 +22,15 @@ pkgbase = linux-mainline
 	options = !strip
 	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.10
 	source = config
+	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
+	source = stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.1.xz
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = e07275447cc779b5deda7a57d04d4a940830690f51d50fe2a09b317121b6c244
+	sha256sums = 249a68cd9bf6ce328b481c4bcaf090127cea8056b9aa3641e41ce80515fff62d
+	sha256sums = d878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3
+	sha256sums = 1b5ca3683e8ae99eee357d11a2f2bfe21561883d6288e29d7bddf3eb0e007fcd
 
 pkgname = linux-mainline
 	pkgdesc = The Linux Mainline kernel and modules
