@@ -9,7 +9,7 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.10
-pkgver=5.10.1
+pkgver=5.10.2
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -29,7 +29,7 @@ source=(
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 
   # stable
-  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.1.xz"
+  "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.2.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -37,9 +37,9 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '249a68cd9bf6ce328b481c4bcaf090127cea8056b9aa3641e41ce80515fff62d'
+            '8e0692a165f97465c14a0d0c2bce66ef3773ed42d32066b30207f2526b12483c'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            '1b5ca3683e8ae99eee357d11a2f2bfe21561883d6288e29d7bddf3eb0e007fcd')
+            'ac9b1858d9e0b48079be05cb13f5fd4e7069a3a9f3dcf7e61d53e76e0222c5cc')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
