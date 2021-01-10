@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.11-rc2
-pkgver=5.11rc2
+_tag=v5.11-rc3
+pkgver=5.11rc3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -28,6 +28,8 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 
+  btf.patch
+
   # stable
   # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.2.xz"
 )
@@ -37,8 +39,9 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '4be9e69f6e878cb92d05293516d82a9aa2e6db1ba992ee8974e162572ad99976'
-            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
+            '7b480025937155cc3b963dbd0aa5d13ab9afe548a875d4b41a8433b0ced97974'
+            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
+            '47bfb4c0b39db5b7e94f5dfd6b4e7d6049ff4b2d01f99a88f7c5807857a1e43b')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
