@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.11-rc3
-pkgver=5.11rc3
+_tag=v5.11-rc4
+pkgver=5.11rc4
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -39,7 +39,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '7b480025937155cc3b963dbd0aa5d13ab9afe548a875d4b41a8433b0ced97974'
+            'a66607fe854ae22511b7999b3cdf72f23d4e4298ac7da59b5a63f68a958993a0'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
             '47bfb4c0b39db5b7e94f5dfd6b4e7d6049ff4b2d01f99a88f7c5807857a1e43b')
 
