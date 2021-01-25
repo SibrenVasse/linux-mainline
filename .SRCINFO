@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.11rc4
+	pkgver = 5.11rc5
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -20,7 +20,7 @@ pkgbase = linux-mainline
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.11-rc4
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.11-rc5
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 	source = btf.patch
@@ -28,7 +28,7 @@ pkgbase = linux-mainline
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = a66607fe854ae22511b7999b3cdf72f23d4e4298ac7da59b5a63f68a958993a0
+	sha256sums = 961c6358fcb55f5eddf542a6a10c1be5c106dbe89721d14f1961680dde25812f
 	sha256sums = d878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3
 	sha256sums = 47bfb4c0b39db5b7e94f5dfd6b4e7d6049ff4b2d01f99a88f7c5807857a1e43b
 
