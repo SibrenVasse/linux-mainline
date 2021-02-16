@@ -1,0 +1,39 @@
+From 6a4216a27953b7b02e6f4ddfbdec3feb5120f04b Mon Sep 17 00:00:00 2001
+From: Sibren Vasse <gitlab@sibrenvasse.nl>
+Date: Tue, 16 Feb 2021 14:52:26 +0100
+Subject: [PATCH] Revert "drm/amd/display: NULL pointer error during compliance
+ test"
+
+This reverts commit c8ea79a8a2767e7948c778237be655a109366eb9.
+---
+ drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+index 961abf1cf040..df60ce51fcf3 100644
+--- a/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
++++ b/drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c
+@@ -2551,16 +2551,14 @@ static void handle_hpd_rx_irq(void *param)
+ 		}
+ 	}
+ 
+-	mutex_lock(&adev->dm.dc_lock);
++out:
+ #ifdef CONFIG_DRM_AMD_DC_HDCP
+-	result = dc_link_handle_hpd_rx_irq(dc_link, &hpd_irq_data, NULL);
++	if (dc_link_handle_hpd_rx_irq(dc_link, &hpd_irq_data, NULL) &&
+ #else
+-	result = dc_link_handle_hpd_rx_irq(dc_link, NULL, NULL);
++	if (dc_link_handle_hpd_rx_irq(dc_link, NULL, NULL) &&
+ #endif
+-	mutex_unlock(&adev->dm.dc_lock);
+ 
+-out:
+-	if (result && !is_mst_root_connector) {
++				!is_mst_root_connector) {
+ 		/* Downstream Port status changed. */
+ 		if (!dc_link_detect_sink(dc_link, &new_connection_type))
+ 			DRM_ERROR("KMS: Failed to detect connector\n");
+-- 
+2.30.1
+

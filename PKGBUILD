@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.11
 pkgver=5.11
-pkgrel=1
+pkgrel=3
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -27,6 +27,10 @@ source=(
   config         # the main kernel config file
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
+  sphinx-workaround.patch::https://raw.githubusercontent.com/archlinux/svntogit-packages/be7d4710850020de55bce930c83fa80347c02fc3/trunk/sphinx-workaround.patch
+
+  # https://gitlab.freedesktop.org/drm/amd/-/issues/1495
+  0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
 
   # stable
   # "stable.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.2.xz"
@@ -37,8 +41,10 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '31da5616e0cf9b5a1f6f64c0b39c5cf8d439be00c0022b78bf5c8106bacd0deb'
-            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
+            '49407edad7c93b3a9b8d4d838fa870bc15b81ee5dff11bb731e4a5953067410d'
+            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
+            '52fc0fcd806f34e774e36570b2a739dbdf337f7ff679b1c1139bee54d03301eb'
+            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
