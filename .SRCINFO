@@ -23,7 +23,6 @@ pkgbase = linux-mainline
 	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.12-rc2
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
-	source = sphinx-workaround.patch::https://raw.githubusercontent.com/archlinux/svntogit-packages/be7d4710850020de55bce930c83fa80347c02fc3/trunk/sphinx-workaround.patch
 	source = 0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
 	validpgpkeys = ABAF11C65A2970B130ABE3C479BE3E4300411886
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
@@ -31,7 +30,6 @@ pkgbase = linux-mainline
 	sha256sums = SKIP
 	sha256sums = 16487a6ab249242a378c451bb52c6ed55875e7e38b27b0283eeb0e79c8f8bc49
 	sha256sums = d878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3
-	sha256sums = 52fc0fcd806f34e774e36570b2a739dbdf337f7ff679b1c1139bee54d03301eb
 	sha256sums = dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01
 
 pkgname = linux-mainline
