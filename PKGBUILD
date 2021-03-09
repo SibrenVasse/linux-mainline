@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.12-rc2
 pkgver=5.12rc2
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -31,6 +31,8 @@ source=(
   # https://gitlab.freedesktop.org/drm/amd/-/issues/1495
   0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
 
+  watermark.patch::https://patchwork.freedesktop.org/patch/422999/raw/
+
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
@@ -42,7 +44,8 @@ validpgpkeys=(
 sha256sums=('SKIP'
             '16487a6ab249242a378c451bb52c6ed55875e7e38b27b0283eeb0e79c8f8bc49'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01')
+            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01'
+            '263470d02a3d067593d9e709e31afcb7216ba3f8707171759fd2a334cdcec651')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
