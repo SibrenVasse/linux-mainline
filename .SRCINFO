@@ -1,6 +1,6 @@
 pkgbase = linux-mainline
 	pkgdesc = Linux Mainline
-	pkgver = 5.12rc4
+	pkgver = 5.12rc5
 	pkgrel = 1
 	url = https://kernel.org/
 	arch = x86_64
@@ -20,7 +20,7 @@ pkgbase = linux-mainline
 	makedepends = imagemagick
 	makedepends = git
 	options = !strip
-	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.12-rc4
+	source = linux-mainline::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v5.12-rc5
 	source = config
 	source = clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 	source = 0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
@@ -28,7 +28,7 @@ pkgbase = linux-mainline
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 8218F88849AAC522E94CF470A5E9288C4FA415FA
 	sha256sums = SKIP
-	sha256sums = ece29a2dbc0e7f28bf4296199f4a0c48e5d6bf5c54fdb2748d7e0a890d6e49bc
+	sha256sums = 2783633daf03cd3780dbd94c6a11509b610163dc44704fe471863e747c8a0772
 	sha256sums = d878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3
 	sha256sums = dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01
 
