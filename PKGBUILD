@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.12
 pkgver=5.12
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -40,7 +40,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '7ca7d56752119ce27e8316f36db67d957021284884f72afc4cc52cf841a43e8b'
+            '98362574501a5edd303ee858f171932938f5ea18b785d9213025e23dce495914'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
             'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01')
 
