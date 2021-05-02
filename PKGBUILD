@@ -9,8 +9,8 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.12
-pkgver=5.12
-pkgrel=2
+pkgver=5.12.1
+pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -32,7 +32,7 @@ source=(
   0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
 
   # stable
-  # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
+  "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -40,9 +40,10 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '98362574501a5edd303ee858f171932938f5ea18b785d9213025e23dce495914'
+            'eab2cfdf90a6c400fa253514b3b597a1169bf16dc015fb1b681103313ddf9e08'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01')
+            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01'
+            'd90692a8c4bc8d4ea20a21e30927ba4d01bc772c3ff537059303f01a0bfaa813')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -65,8 +66,8 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  # echo "Applying stable patch"
-  # patch -Np1 < "../stable-${pkgver}.patch"
+  echo "Applying stable patch"
+  patch -Np1 < "../stable-${pkgver}.patch"
 
   echo "Setting config..."
   cp ../config .config
