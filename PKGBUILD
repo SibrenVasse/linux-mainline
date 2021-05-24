@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.13-rc2
-pkgver=5.13rc2
+_tag=v5.13-rc3
+pkgver=5.13rc3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -29,7 +29,7 @@ source=(
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 
   # https://gitlab.freedesktop.org/drm/amd/-/issues/1495
-  0001-Revert-drm-amd-display-NULL-pointer-error-during-com.patch
+  dc_mst.patch::https://patchwork.freedesktop.org/patch/434396/raw/
 
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
@@ -40,9 +40,9 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '09ec5986314c7eb20bf6b54fc06f0a57ff41d9cf1728523d0e1813177595b092'
+            'f1ee22d822fff2dfa50781e2b04c15ffba745ce142b4012d0af2af6a4f475cc3'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            'dc19ff824c385ff4ae2318d5c2592a28474497d4657bbff705950d446a820f01')
+            'e87ffa40836e8e1a0cc45d4fb0d3e3ef5ada421cb899a862262eaceefd795b5d')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
