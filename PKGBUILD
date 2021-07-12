@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.13
-pkgver=5.13
+_tag=v5.14-rc1
+pkgver=5.14rc1
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -28,9 +28,6 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
 
-  # https://gitlab.freedesktop.org/drm/amd/-/issues/1495
-  dc_mst.patch::https://patchwork.freedesktop.org/patch/434396/raw/
-
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
@@ -40,9 +37,8 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '52ba8045ac322656c40469e8c267b1f4b0d197a51a9bca065399409de99d8108'
-            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            'e87ffa40836e8e1a0cc45d4fb0d3e3ef5ada421cb899a862262eaceefd795b5d')
+            'f0c11f5a590fc77b751bc780dc69a7555629edbf9f8a586c598f07cd83ba6126'
+            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
