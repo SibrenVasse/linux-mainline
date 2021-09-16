@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.15-rc1
 pkgver=5.15rc1
-pkgrel=2
+pkgrel=3
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -26,7 +26,8 @@ source=(
   "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
   config         # the main kernel config file
   # Archlinux patches
-  clone_newuser.patch::https://git.archlinux.org/linux.git/patch/?id=e25c86d5689203c0d8f5f4dffb1f616def7c2c74
+  clone_newuser.patch::https://github.com/archlinux/linux/commit/0735052e6d84964f4c9cef57ea619e40d05832ca.patch
+  posix_timers.patch::https://github.com/archlinux/linux/commit/15e410d5dce95a184018f4dd99fa3c7642cafa23.patch
 
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
@@ -38,7 +39,8 @@ validpgpkeys=(
 )
 sha256sums=('SKIP'
             '9ffe1217cca95272a07f33e69dd543f3de16bf621091eacb15e3c4a35ae9f5ea'
-            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
+            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
+            '66bd7bc6a51ba114a4ee433a1e641a081b37b6c586f33f5dbbf1da2b603a0e91')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
