@@ -2,14 +2,14 @@
 # Maintainer: Mikael Eriksson <mikael_eriksson@miffe.org>
 #
 # Based on the linux package by:
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Maintainer: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.15-rc2
-pkgver=5.15rc2
+_tag=v5.15-rc3
+pkgver=5.15rc3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -27,7 +27,6 @@ source=(
   config         # the main kernel config file
   # Archlinux patches
   clone_newuser.patch::https://github.com/archlinux/linux/commit/0735052e6d84964f4c9cef57ea619e40d05832ca.patch
-  posix_timers.patch::https://github.com/archlinux/linux/commit/15e410d5dce95a184018f4dd99fa3c7642cafa23.patch
 
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
@@ -35,12 +34,11 @@ source=(
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
-  '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
+  'A2FF3A36AAA56654109064AB19802F8B0D70FC30'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '3b4ef2fe9cdf32b6099b642eb2a4bd83ed4d970d51282e1fa9b6a91b24d7c8fa'
-            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3'
-            '66bd7bc6a51ba114a4ee433a1e641a081b37b6c586f33f5dbbf1da2b603a0e91')
+            '096635c4c8e5f07867b6f0236e5d1cbaa48c7a5ecdd1f4cbc248662feb8534c2'
+            'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -186,9 +184,6 @@ _package-headers() {
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
-
-  echo "Fixing permissions..."
-  chmod -Rc u=rwX,go=rX "$pkgdir"
 }
 
 pkgname=("$pkgbase" "$pkgbase-headers")
