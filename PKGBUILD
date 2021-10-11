@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.15-rc4
-pkgver=5.15rc4
+_tag=v5.15-rc5
+pkgver=5.15rc5
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -35,9 +35,10 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
   'A2FF3A36AAA56654109064AB19802F8B0D70FC30'  # Jan Alexander Steffens (heftig)
+  'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            'a852b82cd7f1782d1e6d2ba419d1ed16580342a23c76b4502d04697b0f94c4bc'
+            '632b86ab5f67703b9fab9d4e84b9f2c0cd15a32fa65f7a1e7dbbb960d7970228'
             'd878bc79419d2f0850ef9869cbb50937542f9ac1112c4d278b8411bb9dc53dc3')
 
 export KBUILD_BUILD_HOST=archlinux
@@ -67,6 +68,7 @@ prepare() {
   echo "Setting config..."
   cp ../config .config
   make olddefconfig
+  diff -u ../config .config || :
 
   make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
