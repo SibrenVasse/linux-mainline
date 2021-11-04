@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.15
 pkgver=5.15
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -38,7 +38,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            'd3aca692c710a0774ffc78420c761da714c0d5c99f9d0a4fb8fbf47d005afd17'
+            'ba5b116471f9665bf4e2c959e798824d60da95cdd59c0701b0b13250d5fc155b'
             'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122')
 
 export KBUILD_BUILD_HOST=archlinux
