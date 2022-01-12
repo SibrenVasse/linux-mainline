@@ -10,7 +10,7 @@ pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.16
 pkgver=5.16
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -38,7 +38,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '13c6dc19255dfde52bc437de59b0a8d797be9becc87f7f88ebc304451c586ca8'
+            '8e989427bf6a8fd1f561dfb7451da11589810d022a80c0e9843d3dc2ef7af5fa'
             'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122')
 
 export KBUILD_BUILD_HOST=archlinux
@@ -120,14 +120,11 @@ _package-headers() {
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
 
-  # add objtool for external module building and enabled VALIDATION_STACK option
+  # required when STACK_VALIDATION is enabled
   install -Dt "$builddir/tools/objtool" tools/objtool/objtool
 
-  # add resolve_btfids for external module building
+  # required when DEBUG_INFO_BTF_MODULES is enabled
   install -Dt "$builddir/tools/bpf/resolve_btfids" tools/bpf/resolve_btfids/resolve_btfids
-
-  # add xfs and shmem for aufs building
-  mkdir -p "$builddir"/{fs/xfs,mm}
 
   echo "Installing headers..."
   cp -t "$builddir" -a include
