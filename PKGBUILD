@@ -9,8 +9,8 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.16
-pkgver=5.16
-pkgrel=2
+pkgver=5.16.1
+pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -29,7 +29,7 @@ source=(
   clone_newuser.patch::https://github.com/archlinux/linux/commit/0735052e6d84964f4c9cef57ea619e40d05832ca.patch
 
   # stable
-  # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
+  "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,8 +38,9 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '8e989427bf6a8fd1f561dfb7451da11589810d022a80c0e9843d3dc2ef7af5fa'
-            'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122')
+            '7de8b62c41e76d77483b1087f72218c1bd8b23bbf9d11d690a1f10c7fd1d86a6'
+            'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122'
+            '9ff97f3a01ec8744863ff611315c44c1f5d1ff551769f7d8359c85561dee1b1d')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -63,7 +64,7 @@ prepare() {
   done
 
   # echo "Applying stable patch"
-  # patch -Np1 < "../stable-${pkgver}.patch"
+  patch -Np1 < "../stable-${pkgver}.patch"
 
   echo "Setting config..."
   cp ../config .config
