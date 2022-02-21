@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.17-rc4
-pkgver=5.17rc4
+_tag=v5.17-rc5
+pkgver=5.17rc5
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -38,7 +38,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '38f622b8ebf75fc7f6797cfe5372cbab7512d414ab07bf5c8443b1752fbad374'
+            '43e8abf6b388b6a44996238e9f4ade9aab061dcabe2b6aabc0bebb655800ed15'
             'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122')
 
 export KBUILD_BUILD_HOST=archlinux
