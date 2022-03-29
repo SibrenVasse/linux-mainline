@@ -9,8 +9,8 @@
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.17
-pkgver=5.17
-pkgrel=2
+pkgver=5.17.1
+pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
 url="https://kernel.org/"
@@ -26,10 +26,13 @@ source=(
   "$_srcname::git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=$_tag"
   config         # the main kernel config file
   # Archlinux patches
-  clone_newuser.patch::https://github.com/archlinux/linux/commit/0735052e6d84964f4c9cef57ea619e40d05832ca.patch
+  clone_newuser.patch::https://github.com/archlinux/linux/commit/ba9638ad03df373965160a5bdb4173b544381767.patch
+
+  ath9krev.patch::https://github.com/archlinux/linux/commit/29f850827951966fefbea50555995775129f9516.patch
+  bootloader_trust.patch::https://github.com/archlinux/linux/commit/22365749abd27f2cb582a049da42b7c7a02b6bfe.patch
 
   # stable
-  # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
+  "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -38,8 +41,11 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '56911cc822a7111983afa0599c18fa3b64511e59f8a1b1abf045fe8e6ed42ea8'
-            'ad2744f22fdbaa6b0d5d142b75fd9a4aab30481c5cfbf62184a02f01618b7122')
+            '4e7c910c957846bcf867588ffbd99327155777f19da55169ac725917510b4df1'
+            '3c20d998bd38983fe7a1e399bfd0ccf7f066afb6c1b759c43955e0513a108680'
+            '65469a310cfe0dfc3d25e83ecacc6c144b218f575d49731a1715e6f57f89d521'
+            'a30acaaad0db03e43d14c31e33719f51ef145b055c76606cd5f50eb971b751b4'
+            '24c982d6b7b704b31a6b4bc0a59cbf2135697a58d5d6030532ae07856da36944')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -62,8 +68,8 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  # echo "Applying stable patch"
-  # patch -Np1 < "../stable-${pkgver}.patch"
+  echo "Applying stable patch"
+  patch -Np1 < "../stable-${pkgver}.patch"
 
   echo "Setting config..."
   cp ../config .config
