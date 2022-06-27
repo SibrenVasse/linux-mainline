@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.19-rc3
-pkgver=5.19rc3
+_tag=v5.19-rc4
+pkgver=5.19rc4
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -28,8 +28,6 @@ source=(
   # Archlinux patches
   clone_newuser.patch::https://github.com/archlinux/linux/commit/ba9638ad03df373965160a5bdb4173b544381767.patch
 
-  sync_rcu.patch::https://git.kernel.org/pub/scm/linux/kernel/git/akpm/25-new.git/plain/patches/mm-lru_cache_disable-use-synchronize_rcu_expedited.patch
-
   # stable
   # "stable-${pkgver}.patch.xz::https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
 )
@@ -40,9 +38,8 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '5d29f97af36751ff33ab85b985b9843acdb00a158b7a042d457da6be51d15fbb'
-            '3c20d998bd38983fe7a1e399bfd0ccf7f066afb6c1b759c43955e0513a108680'
-            'e3e055b92ab8455c8d27f2033db23c32e3914465a7e7077743097dd9e1beb62c')
+            '196687c88468e0161dfdff9f1666995bd28e9ba07dc3b27659550e5b0846782b'
+            '3c20d998bd38983fe7a1e399bfd0ccf7f066afb6c1b759c43955e0513a108680')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
