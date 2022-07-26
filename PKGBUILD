@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v5.19-rc7
-pkgver=5.19rc7
+_tag=v5.19-rc8
+pkgver=5.19rc8
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -38,7 +38,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '4019efd7db15b92c2e049f6c525005c0f2ba70bdcfc4104d04c1330216ab7e9a'
+            '75555d8a166e439c5e1368f28c69b275e064392f783dabb2b6043f2619dd6d42'
             '3c20d998bd38983fe7a1e399bfd0ccf7f066afb6c1b759c43955e0513a108680')
 
 export KBUILD_BUILD_HOST=archlinux
