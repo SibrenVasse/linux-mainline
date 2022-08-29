@@ -8,8 +8,8 @@
 
 pkgbase=linux-mainline               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_tag=v6.0-rc2
-pkgver=6.0rc2
+_tag=v6.0-rc3
+pkgver=6.0rc3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
@@ -38,7 +38,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            'e22c04e5855548d5445d990955c0ffbbfc682d6f89fd028c43f7ce43c6386a42'
+            '79c906823ec67a273021ff0fc52ab4ddbb064098f0fad065e89bf62353e23e5b'
             '3c20d998bd38983fe7a1e399bfd0ccf7f066afb6c1b759c43955e0513a108680')
 
 export KBUILD_BUILD_HOST=archlinux
